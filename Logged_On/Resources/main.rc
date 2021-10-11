@@ -1,0 +1,119 @@
+/****************************************************************
+ ****************************************************************
+ ***                                                          ***
+ ***        Copyright (c) 2001 by -=Assarbad [GoP]=-          ***
+ ***       ____________                 ___________           ***
+ ***      /\   ________\               /\   _____  \          ***
+ ***     /  \  \       /    __________/  \  \    \  \         ***
+ ***     \   \  \   __/___ /\   _____  \  \  \____\  \        ***
+ ***      \   \  \ /\___  \  \  \    \  \  \   _______\       ***
+ ***       \   \  \ /   \  \  \  \    \  \  \  \      /       ***
+ ***        \   \  \_____\  \  \  \____\  \  \  \____/        ***
+ ***         \   \___________\  \__________\  \__\            ***
+ ***          \  /           /  /          /  /  /            ***
+ ***           \/___________/ \/__________/ \/__/             ***
+ ***                                                          ***
+ ***  May the source be with you, stranger ... :-)            ***
+ ***                                                          ***
+ ***  Greets from -=Assarbad [GoP]=- ...                      ***
+ ***  Special greets go 2 Nico, Casper, SA, Pizza, Navarion...***
+ ***[for questions/proposals drop a mail to Assarbad@ePost.de]***
+ *****************************************ASCII by Assa [GoP]****
+ ****************************************************************/
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+#define IDC_BUTTON1                     1001
+#define IDC_LIST1                       1002
+#define IDC_BUTTON2                     1003
+#define IDC_BUTTON_STATUS               1004
+#define IDC_BUTTON_CLOSE                1005
+#define IDC_CUSTOM1                     1006
+#define IDC_CUSTOM2                     1007
+#define IDC_STATIC_ABOUT                1008
+#define IDC_STATIC_ASSA_ICON            1009
+
+DIALOG1 DIALOGEX 0, 0, 327, 167
+STYLE DS_SYSMODAL | DS_CENTER | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+//STYLE DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LoggedOn2"
+FONT 8, "Arial"
+BEGIN
+    PUSHBUTTON      "&Scan domain",IDC_BUTTON1,257,7,63,66,0,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Scan &machine",IDC_BUTTON2,257,76,63,66,0,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_LIST1,"SysTreeView32",NOT WS_BORDER | WS_TABSTOP | TVS_HASLINES | TVS_LINESATROOT | TVS_HASBUTTONS | 0x1000,7,7,245,135,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "",IDC_BUTTON_STATUS,7,146,
+                    313,14,BS_FLAT | NOT WS_TABSTOP
+END
+
+DIALOG_ABOUT DIALOGEX 0, 0, 273, 70
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "Arial"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDC_BUTTON_CLOSE,114,55,46,14,0,WS_EX_CLIENTEDGE
+    CONTROL         "Visit my homepage",IDC_CUSTOM1,"AHyperlinkWndClassEx",
+                    WS_TABSTOP,6,54,100,11
+    CONTROL         "Mail to Assarbad",IDC_CUSTOM2,"AHyperlinkWndClassEx",
+                    WS_TABSTOP,260-100,54,100,11
+    CTEXT           "LoggedOn2 v.1.02\nProgram to remotely or locally determine the currently logged on users on a machine.\n\nGreets go to: Nico, Navarion, CRA, TRM, schtief, Casper, -=SA=-, -=Strelok=- and all I forgot ;)",IDC_STATIC_ABOUT,6,0,260,54,SS_NOPREFIX | NOT
+                    WS_GROUP,WS_EX_CLIENTEDGE
+END
+
+1 ICON
+BEGIN
+'00 00 01 00  01 00 20 20  10 00 00 00  00 00 E8 02'
+'00 00 16 00  00 00 28 00  00 00 20 00  00 00 40 00'
+'00 00 01 00  04 00 00 00  00 00 80 02  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  80 00 00 80  00 00 00 80  80 00 80 00'
+'00 00 80 00  80 00 80 80  00 00 C0 C0  C0 00 80 80'
+'80 00 00 00  FF 00 00 FF  00 00 00 FF  FF 00 FF 00'
+'00 00 FF 00  FF 00 FF FF  00 00 FF FF  FF 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 01 91 00  00 00 00 00  19 99 10 00  00 00 00 00'
+'00 01 99 99  99 19 99 99  99 91 00 00  00 00 00 00'
+'00 00 11 19  91 11 11 00  01 91 00 00  00 00 00 00'
+'00 00 11 01  10 00 00 00  01 91 00 00  00 00 00 00'
+'00 00 11 11  91 00 00 00  01 10 00 00  00 00 00 00'
+'00 00 01 10  11 00 00 00  19 10 00 00  00 00 00 00'
+'00 00 01 10  19 10 00 00  11 00 00 00  00 00 00 00'
+'00 00 01 91  01 10 00 01  91 00 00 00  00 00 00 00'
+'00 00 00 11  01 91 00 01  10 00 00 00  00 00 00 00'
+'00 00 00 19  10 11 00 19  10 00 00 00  00 00 00 00'
+'00 00 00 01  10 11 10 11  00 00 00 00  00 00 00 00'
+'00 00 00 01  11 00 01 11  00 00 00 00  00 00 00 00'
+'00 00 00 00  11 00 01 10  00 00 00 00  00 00 00 00'
+'00 00 00 00  19 10 19 10  00 00 00 00  00 00 00 00'
+'00 00 01 10  01 11 91 00  00 00 00 00  00 00 00 00'
+'00 00 19 91  00 01 10 00  00 00 00 00  00 00 00 00'
+'00 00 99 99  00 19 10 00  00 00 00 00  00 00 00 00'
+'00 00 99 91  01 91 00 00  00 00 00 00  00 00 00 00'
+'00 00 19 91  99 10 00 00  00 00 00 00  00 00 00 00'
+'00 00 01 99  91 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00'
+'00 00 00 00  00 00 00 00  00 00 00 00  00 00'
+END
+
+300 BITMAP "User.bmp"
+301 BITMAP "User_at_WS.bmp"
+302 BITMAP "WS.bmp"
